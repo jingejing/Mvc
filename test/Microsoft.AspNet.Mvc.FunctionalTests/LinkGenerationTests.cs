@@ -45,8 +45,8 @@ namespace Microsoft.AspNet.Mvc.FunctionalTests
 
             // Assert
             Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
-
-            Assert.Equal(expected, response.Headers.Location.ToString());
+            // Location.ToString() in mono returns file://url. (https://github.com/aspnet/External/issues/21)
+            Assert.Equal(new Uri(expected), response.Headers.Location);
         }
 
         [Fact]
