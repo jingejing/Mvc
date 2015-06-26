@@ -180,7 +180,7 @@ namespace Microsoft.AspNet.Mvc
             }
 
             // Clone the media type as we don't want it to affect the next request
-            selectedMediaType = MediaTypeHeaderValue.Parse(selectedMediaType.ToString());
+            selectedMediaType = selectedMediaType.Copy();
 
             var selectedEncoding = SelectCharacterEncoding(context);
             if (selectedEncoding == null)
