@@ -72,7 +72,7 @@ namespace Microsoft.AspNet.Mvc
             {
                 if (contentTypeHeader.Encoding == null)
                 {
-                    // Do not modify the user supplied content type, so clone it instead
+                    // Do not modify the user supplied content type, so copy it instead
                     contentTypeHeader = contentTypeHeader.Copy();
                     contentTypeHeader.Encoding = Encoding.UTF8;
                 }
